@@ -1,0 +1,15 @@
+.cov
+.eslintignore
+.eslintrc.js
+.env
+.git
+.gitignore
+.nyc_output
+.vscode
+Dockerfile
+LICENSE
+README.md
+coverage
+docker-compose.yml
+node_modules
+test

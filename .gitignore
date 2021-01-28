@@ -1,0 +1,6 @@
+.cov
+.env
+.nyc_output
+coverage
+node_modules
+test/mocha.env.js

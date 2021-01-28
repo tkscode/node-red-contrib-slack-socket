@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('slack-listen', {
+        category: 'chat',
+        defaults: {
+            slack: { value: "", type: "slack-controller" },
+            name: { value: "" }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "slack.svg",
+        color: "#FFFFFF",
+        label: function () {
+            return this.name || "Slack Listen";
+        },
+        paletteLabel: "Slack Listen",
+        outputLabels: ["event"]
+    });
+</script>
+
+<script type="text/x-red" data-template-name="slack-listen">
+    <div class="form-row">
+        <label for="node-input-slack"> Settings</label>
+        <input type="text" id="node-input-slack">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name of this Node">
+    </div>     
+</script>
+
+<script type="text/x-red" data-help-name="slack-listen">
+    <h3>Usage</h3>
+    <p>
+        <ol>
+            <li>Open config node from &quot;Settings&quot;.</li>
+            <li>Input Slack app-level token and events to be recieved in config node.</li>
+        </ol>
+    </p>
+</script>

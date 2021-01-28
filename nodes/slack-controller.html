@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    RED.nodes.registerType("slack-controller", {
+        category: "config",
+        defaults: {
+            name: { value: "", required: true },
+            appToken: { value: "", required: true, validate: RED.validators.typedInput("tokenType") },
+            tokenType: { value: "str" },
+            listenEvents: { value: "str", required: true }
+        },
+        label: function () {
+            return this.name;
+        },
+        oneditprepare: function () {
+            $("#node-config-input-appToken").typedInput({
+                default: "str",
+                typeField: $("#node-config-input-tokenType"),
+                types: ["global", "str", "env"]
+            });
+
+            $("#node-input-payload").typedInput('type', this.payloadType);
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="slack-controller">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-appToken"><i class="fa fa-lock"></i> Token</label>
+        <input type="text" id="node-config-input-appToken" style="width:70%">
+        <input type="hidden" id="node-config-input-tokenType">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-listenEvents"><i class="fa fa-bell"></i> Events</label>
+        <input type="text" id="node-config-input-listenEvents" value="app_mention">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="slack-controller">
+    <h3>Token</h3>
+    <p>
+        Input app-level token.<br>
+        Read &quot;<a href="https://api.slack.com/apis/connections/socket" target="_blank">Intro to Socket Mode</a>&quot; to generate app-level token.
+    </p>
+
+    <h3>Events</h3>
+    <p>
+        Input events to be received. (comma-separated)<br>
+        Example:
+        <pre>app_mention,file_shared</pre>
+        The events that can be specified must have &quot;Event API&quot; in the &quot;Works with&quot; column in <a href="https://api.slack.com/events" target="_blank">this page</a>.
+    </p>
+</script>

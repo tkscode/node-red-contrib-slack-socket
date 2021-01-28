@@ -1,0 +1,44 @@
+{
+  "name": "node-red-contrib-slack-socket",
+  "version": "0.0.1",
+  "description": "A Node-RED node to interact with the Slack Socket Mode.",
+  "scripts": {
+    "test": "nyc --reporter=lcov --silent=false --reporter=text-summary mocha ./test/**/*_spec.js --require test/mocha.env.js",
+    "lint": "eslint nodes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkscode/node-red-contrib-slack-socket.git"
+  },
+  "author": {
+    "name": "tkscode"
+  },
+  "keywords": [
+    "node-red",
+    "slack",
+    "socket-mode"
+  ],
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "slack-controller": "nodes/slack-controller.js",
+      "slack-listen": "nodes/slack-listen.js"
+    }
+  },
+  "dependencies": {
+    "@slack/socket-mode": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "mocha": "^7.2.0",
+    "node-red": "^1.0.4",
+    "node-red-node-test-helper": "^0.2.4",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.5",
+    "should": "^13.2.3",
+    "sinon": "^9.2.3"
+  }
+}

@@ -1,0 +1,13 @@
+version: "3"
+
+services: 
+  test-nodered:
+    build:
+      context: .
+    image: test-nodered:slack
+    container_name: test-nodered
+    env_file: .env
+    ports:
+      - 11880:1880
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
