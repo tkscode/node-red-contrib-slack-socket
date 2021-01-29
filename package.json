@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-slack-socket",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Node-RED node to interact with the Slack Socket Mode.",
   "scripts": {
     "test": "nyc --reporter=lcov --silent=false --reporter=text-summary mocha ./test/**/*_spec.js --require test/mocha.env.js",
