@@ -71,7 +71,7 @@ module.exports = function (RED) {
               try {
                 await ack();
 
-                node.send({ payload: event });
+                node.send({ payload: body });
               } catch (error) {
                 node.error(error);
               }
